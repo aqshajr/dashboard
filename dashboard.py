@@ -13,8 +13,10 @@ st.title("Rata-rata Nilai Transaksi Berdasarkan Metode Pembayaran")
 
 orderpayments_df = orderpayments_df.groupby('payment_type')['payment_value'].mean().sort_values()
 
+colors = ['#72BCD4', '#72BCD4', '#72BCD4', '#1F77B4']
+
 fig, ax = plt.subplots()
-ax.bar(orderpayments_df.index, orderpayments_df.values, color='#72BCD4')
+ax.bar(orderpayments_df.index, orderpayments_df.values, color=colors)
 ax.set_title('Rata-rata Nilai Transaksi Berdasarkan Metode Pembayaran', fontsize=15)
 ax.set_xlabel('Metode Pembayaran', fontsize=12)
 ax.set_ylabel('Rata-rata Nilai Transaksi', fontsize=12)
